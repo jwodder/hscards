@@ -1,0 +1,534 @@
+{
+    "Acidic Swamp Ooze": {
+        "gold_class": "Rogue",
+        "gold_levels": [57, 58]
+    },
+    "Ancestral Healing": {
+        "gold_levels": [15, 20],
+        "unlock_lvl": 1
+    },
+    "Animal Companion": {
+        "gold_levels": [45, 46],
+        "unlock_lvl": 2
+    },
+    "Arcane Explosion": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 1
+    },
+    "Arcane Intellect": {
+        "gold_levels": [15, 20],
+        "unlock_lvl": 1
+    },
+    "Arcane Missiles": {
+        "gold_levels": [32, 34],
+        "unlock_lvl": 1
+    },
+    "Arcane Shot": {
+        "gold_levels": [32, 34],
+        "unlock_lvl": 1
+    },
+    "Arcanite Reaper": {
+        "gold_levels": [51, 52],
+        "unlock_lvl": 10
+    },
+    "Archmage": {
+        "gold_class": "Mage",
+        "gold_levels": [57, 58]
+    },
+    "Assassin's Blade": {
+        "gold_levels": [32, 34],
+        "unlock_lvl": 2
+    },
+    "Assassinate": {
+        "gold_levels": [47, 48],
+        "unlock_lvl": 1
+    },
+    "Backstab": {
+        "gold_levels": [36, 38],
+        "unlock_lvl": 1
+    },
+    "Blessing of Kings": {
+        "gold_levels": [49, 50],
+        "unlock_lvl": 10
+    },
+    "Blessing of Might": {
+        "gold_levels": [45, 46],
+        "unlock_lvl": 1
+    },
+    "Bloodfen Raptor": {
+        "gold_class": "Hunter",
+        "gold_levels": [57, 58]
+    },
+    "Bloodlust": {
+        "gold_levels": [40, 42],
+        "unlock_lvl": 2
+    },
+    "Bluegill Warrior": {
+        "gold_class": "Paladin",
+        "gold_levels": [53, 54]
+    },
+    "Booty Bay Bodyguard": {
+        "gold_class": "Shaman",
+        "gold_levels": [55, 56]
+    },
+    "Boulderfist Ogre": {
+        "gold_class": "Warlock",
+        "gold_levels": [51, 52]
+    },
+    "Charge": {
+        "gold_levels": [23, 26],
+        "unlock_lvl": 1
+    },
+    "Chillwind Yeti": {
+        "gold_class": "Warrior",
+        "gold_levels": [55, 56]
+    },
+    "Claw": {
+        "gold_levels": [32, 34],
+        "unlock_lvl": 1
+    },
+    "Cleave": {
+        "gold_levels": [40, 42],
+        "unlock_lvl": 2
+    },
+    "Consecration": {
+        "gold_levels": [43, 44],
+        "unlock_lvl": 4
+    },
+    "Core Hound": {
+        "gold_class": "Hunter",
+        "gold_levels": [51, 52]
+    },
+    "Corruption": {
+        "gold_levels": [32, 34],
+        "unlock_lvl": 2
+    },
+    "Dalaran Mage": {
+        "gold_class": "Mage",
+        "gold_levels": [59, 60]
+    },
+    "Darkscale Healer": {
+        "gold_class": "Priest",
+        "gold_levels": [55, 56]
+    },
+    "Deadly Poison": {
+        "gold_levels": [43, 44],
+        "unlock_lvl": 1
+    },
+    "Divine Spirit": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 2
+    },
+    "Dragonling Mechanic": {
+        "gold_class": "Mage",
+        "gold_levels": [53, 54]
+    },
+    "Drain Life": {
+        "gold_levels": [45, 46],
+        "unlock_lvl": 1
+    },
+    "Dread Infernal": {
+        "gold_levels": [23, 26],
+        "unlock_lvl": 10
+    },
+    "Elven Archer": {
+        "gold_class": "Druid",
+        "gold_levels": [57, 58]
+    },
+    "Execute": {
+        "gold_levels": [47, 48],
+        "unlock_lvl": 1
+    },
+    "Fan of Knives": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 4
+    },
+    "Fiery War Axe": {
+        "gold_levels": [49, 50],
+        "unlock_lvl": 1
+    },
+    "Fire Elemental": {
+        "gold_levels": [49, 50],
+        "unlock_lvl": 10
+    },
+    "Fireball": {
+        "gold_levels": [44, 46],
+        "unlock_lvl": 1
+    },
+    "Flamestrike": {
+        "gold_levels": [51, 52],
+        "unlock_lvl": 10
+    },
+    "Flametongue Totem": {
+        "gold_levels": [43, 44],
+        "unlock_lvl": 4
+    },
+    "Frost Nova": {
+        "gold_levels": [23, 26],
+        "unlock_lvl": 6
+    },
+    "Frost Shock": {
+        "gold_levels": [32, 34],
+        "unlock_lvl": 1
+    },
+    "Frostbolt": {
+        "gold_levels": [40, 42],
+        "unlock_lvl": 2
+    },
+    "Frostwolf Grunt": {
+        "gold_class": "Shaman",
+        "gold_levels": [57, 58]
+    },
+    "Frostwolf Warlord": {
+        "gold_class": "Shaman",
+        "gold_levels": [53, 54]
+    },
+    "Gnomish Inventor": {
+        "gold_class": "Priest",
+        "gold_levels": [57, 58]
+    },
+    "Goldshire Footman": {
+        "gold_class": "Paladin",
+        "gold_levels": [57, 58]
+    },
+    "Grimscale Oracle": {
+        "gold_class": "Warlock",
+        "gold_levels": [53, 54]
+    },
+    "Guardian of Kings": {
+        "gold_levels": [47, 48],
+        "unlock_lvl": 8
+    },
+    "Gurubashi Berserker": {
+        "gold_class": "Warlock",
+        "gold_levels": [57, 58]
+    },
+    "Hammer of Wrath": {
+        "gold_levels": [32, 34],
+        "unlock_lvl": 1
+    },
+    "Hand of Protection": {
+        "gold_levels": [23, 26],
+        "unlock_lvl": 1
+    },
+    "Healing Touch": {
+        "gold_levels": [15, 20],
+        "unlock_lvl": 1
+    },
+    "Hellfire": {
+        "gold_levels": [49, 50],
+        "unlock_lvl": 1
+    },
+    "Heroic Strike": {
+        "gold_levels": [15, 20],
+        "unlock_lvl": 1
+    },
+    "Hex": {
+        "gold_levels": [47, 48],
+        "unlock_lvl": 1
+    },
+    "Holy Light": {
+        "gold_levels": [15, 20],
+        "unlock_lvl": 1
+    },
+    "Holy Nova": {
+        "gold_levels": [45, 46],
+        "unlock_lvl": 6
+    },
+    "Holy Smite": {
+        "gold_levels": [23, 26],
+        "unlock_lvl": 1
+    },
+    "Houndmaster": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 1
+    },
+    "Humility": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 6
+    },
+    "Hunter's Mark": {
+        "gold_levels": [40, 42],
+        "unlock_lvl": 6
+    },
+    "Innervate": {
+        "gold_levels": [36, 38],
+        "unlock_lvl": 1
+    },
+    "Ironbark Protector": {
+        "gold_levels": [49, 50],
+        "unlock_lvl": 10
+    },
+    "Ironforge Rifleman": {
+        "gold_class": "Mage",
+        "gold_levels": [55, 56]
+    },
+    "Ironfur Grizzly": {
+        "gold_class": "Hunter",
+        "gold_levels": [59, 60]
+    },
+    "Kill Command": {
+        "gold_levels": [49, 50],
+        "unlock_lvl": 10
+    },
+    "Kobold Geomancer": {
+        "gold_class": "Warlock",
+        "gold_levels": [59, 60]
+    },
+    "Kor'kron Elite": {
+        "gold_levels": [44, 46],
+        "unlock_lvl": 4
+    },
+    "Light's Justice": {
+        "gold_levels": [36, 38],
+        "unlock_lvl": 1
+    },
+    "Lord of the Arena": {
+        "gold_class": "Priest",
+        "gold_levels": [59, 60]
+    },
+    "Magma Rager": {
+        "gold_class": "Shaman",
+        "gold_levels": [51, 52]
+    },
+    "Mark of the Wild": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 1
+    },
+    "Mind Blast": {
+        "gold_levels": [15, 20],
+        "unlock_lvl": 1
+    },
+    "Mind Control": {
+        "gold_levels": [49, 50],
+        "unlock_lvl": 10
+    },
+    "Mind Vision": {
+        "gold_levels": [32, 34],
+        "unlock_lvl": 4
+    },
+    "Mirror Image": {
+        "gold_levels": [36, 38],
+        "unlock_lvl": 4
+    },
+    "Moonfire": {
+        "gold_levels": [40, 42],
+        "unlock_lvl": 6
+    },
+    "Mortal Coil": {
+        "gold_levels": [43, 44],
+        "unlock_lvl": 4
+    },
+    "Multi-Shot": {
+        "gold_levels": [36, 38],
+        "unlock_lvl": 1
+    },
+    "Murloc Raider": {
+        "gold_class": "Priest",
+        "gold_levels": [51, 52]
+    },
+    "Murloc Tidehunter": {
+        "gold_class": "Rogue",
+        "gold_levels": [53, 54]
+    },
+    "Nightblade": {
+        "gold_class": "Druid",
+        "gold_levels": [53, 54]
+    },
+    "Northshire Cleric": {
+        "gold_levels": [40, 42],
+        "unlock_lvl": 1
+    },
+    "Novice Engineer": {
+        "gold_class": "Druid",
+        "gold_levels": [59, 60]
+    },
+    "Oasis Snapjaw": {
+        "gold_class": "Druid",
+        "gold_levels": [51, 52]
+    },
+    "Ogre Magi": {
+        "gold_class": "Warlock",
+        "gold_levels": [55, 56]
+    },
+    "Polymorph": {
+        "gold_levels": [47, 48],
+        "unlock_lvl": 1
+    },
+    "Power Word: Shield": {
+        "gold_levels": [47, 48],
+        "unlock_lvl": 1
+    },
+    "Raid Leader": {
+        "gold_class": "Warrior",
+        "gold_levels": [57, 58]
+    },
+    "Razorfen Hunter": {
+        "gold_class": "Hunter",
+        "gold_levels": [55, 56]
+    },
+    "Reckless Rocketeer": {
+        "gold_class": "Shaman",
+        "gold_levels": [59, 60]
+    },
+    "River Crocolisk": {
+        "gold_class": "Druid",
+        "gold_levels": [55, 56]
+    },
+    "Rockbiter Weapon": {
+        "gold_levels": [36, 38],
+        "unlock_lvl": 1
+    },
+    "Sacrificial Pact": {
+        "gold_levels": [15, 20],
+        "unlock_lvl": 8
+    },
+    "Sap": {
+        "gold_levels": [40, 42],
+        "unlock_lvl": 1
+    },
+    "Savage Roar": {
+        "gold_levels": [43, 44],
+        "unlock_lvl": 4
+    },
+    "Sen'jin Shieldmasta": {
+        "gold_class": "Rogue",
+        "gold_levels": [59, 60]
+    },
+    "Shadow Bolt": {
+        "gold_levels": [47, 48],
+        "unlock_lvl": 1
+    },
+    "Shadow Word: Death": {
+        "gold_levels": [43, 44],
+        "unlock_lvl": 8
+    },
+    "Shadow Word: Pain": {
+        "gold_levels": [36, 38],
+        "unlock_lvl": 1
+    },
+    "Shattered Sun Cleric": {
+        "gold_class": "Priest",
+        "gold_levels": [53, 54]
+    },
+    "Shield Block": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 8
+    },
+    "Shiv": {
+        "gold_levels": [45, 46],
+        "unlock_lvl": 6
+    },
+    "Silverback Patriarch": {
+        "gold_class": "Warrior",
+        "gold_levels": [53, 54]
+    },
+    "Sinister Strike": {
+        "gold_levels": [15, 20],
+        "unlock_lvl": 1
+    },
+    "Soulfire": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 6
+    },
+    "Sprint": {
+        "gold_levels": [49, 50],
+        "unlock_lvl": 10
+    },
+    "Starfire": {
+        "gold_levels": [45, 46],
+        "unlock_lvl": 2
+    },
+    "Starving Buzzard": {
+        "gold_levels": [47, 48],
+        "unlock_lvl": 4
+    },
+    "Stonetusk Boar": {
+        "gold_class": "Hunter",
+        "gold_levels": [53, 54]
+    },
+    "Stormpike Commando": {
+        "gold_class": "Paladin",
+        "gold_levels": [51, 52]
+    },
+    "Stormwind Champion": {
+        "gold_class": "Paladin",
+        "gold_levels": [59, 60]
+    },
+    "Stormwind Knight": {
+        "gold_class": "Paladin",
+        "gold_levels": [55, 56]
+    },
+    "Succubus": {
+        "gold_levels": [40, 42],
+        "unlock_lvl": 1
+    },
+    "Swipe": {
+        "gold_levels": [47, 48],
+        "unlock_lvl": 8
+    },
+    "Timber Wolf": {
+        "gold_levels": [23, 26],
+        "unlock_lvl": 1
+    },
+    "Totemic Might": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 6
+    },
+    "Tracking": {
+        "gold_levels": [15, 20],
+        "unlock_lvl": 1
+    },
+    "Truesilver Champion": {
+        "gold_levels": [40, 42],
+        "unlock_lvl": 2
+    },
+    "Tundra Rhino": {
+        "gold_levels": [43, 44],
+        "unlock_lvl": 8
+    },
+    "Vanish": {
+        "gold_levels": [23, 26],
+        "unlock_lvl": 8
+    },
+    "Voidwalker": {
+        "gold_levels": [36, 38],
+        "unlock_lvl": 1
+    },
+    "Voodoo Doctor": {
+        "gold_class": "Rogue",
+        "gold_levels": [55, 56]
+    },
+    "War Golem": {
+        "gold_class": "Rogue",
+        "gold_levels": [51, 52]
+    },
+    "Warsong Commander": {
+        "gold_levels": [36, 38],
+        "unlock_lvl": 1
+    },
+    "Water Elemental": {
+        "gold_levels": [49, 50],
+        "unlock_lvl": 8
+    },
+    "Whirlwind": {
+        "gold_levels": [32, 34],
+        "unlock_lvl": 6
+    },
+    "Wild Growth": {
+        "gold_levels": [23, 26],
+        "unlock_lvl": 1
+    },
+    "Windfury": {
+        "gold_levels": [23, 26],
+        "unlock_lvl": 1
+    },
+    "Windspeaker": {
+        "gold_levels": [45, 46],
+        "unlock_lvl": 8
+    },
+    "Wolfrider": {
+        "gold_class": "Warrior",
+        "gold_levels": [59, 60]
+    }
+}
