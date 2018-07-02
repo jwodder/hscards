@@ -7,8 +7,6 @@
 - Get enum strings from
   <https://api.hearthstonejson.com/v1/strings/enUS/GLOBAL.json>
 
-- Support "armor" field of hero cards
-
 - Checklists:
     - Add an option for setting the output directory/output path
     - Add an option for whether to include checkboxes?

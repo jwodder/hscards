@@ -137,8 +137,10 @@ class HSCard:
         #     howToEarnGolden  id                mechanics    multiClassGroup
         #     overload         playRequirements  playerClass  referencedTags
         #     spellDamage      targetingArrowText
-        for field in 'artist attack cost durability flavor health name text'\
-                     .split():
+        for field in (
+            'armor artist attack cost durability flavor health name text'
+                .split()
+        ):
             setattr(self, field, data.get(field))
         if "collectionText" in data:
             self.text = data["collectionText"]
@@ -209,6 +211,8 @@ class HSCard:
             return '{0.attack:2}/{0.health:<2}'.format(self)
         elif self.type is HSType.WEAPON:
             return '{0.attack:2}/{0.durability:<2}'.format(self)
+        elif self.type is HSType.HERO:
+            return ' -/{0.armor:<2}'.format(self)
         else:
             return ''
 
