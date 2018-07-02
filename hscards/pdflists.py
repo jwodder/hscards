@@ -1,9 +1,8 @@
 from math                    import cos, sin, tan, tau
-from pathlib                 import Path
 from reportlab.lib           import pagesizes
 from reportlab.lib.units     import inch
 from reportlab.pdfgen.canvas import Canvas
-from .carddb                 import CARDS_URL, CardDB, HSRarity
+from .carddb                 import HSRarity
 
 FONT_NAME = 'Times-Roman'
 FONT_SIZE = 10
@@ -29,13 +28,6 @@ RARITY_COLORS = {
     HSRarity.EPIC: (0.5, 0, 0.5),
     HSRarity.LEGENDARY: (1, 0.5, 0),
 }
-
-def main():
-    chkdir = Path('build', 'checklists')
-    chkdir.mkdir(exist_ok=True)
-    all_cards = CardDB.from_url(CARDS_URL)
-    for hs_set, cards in all_cards.by_set():
-        mkpdfcardlist(cards, str(chkdir / (hs_set.name + '.pdf')))
 
 def mkpdfcardlist(cards, outpath):
     def start_class(cls_name):
@@ -146,6 +138,3 @@ def star(c, x, y):
     p.close()
     c.drawPath(p, fill=0, stroke=1)
     c.restoreState()
-
-if __name__ == '__main__':
-    main()

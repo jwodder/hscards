@@ -1,29 +1,25 @@
 - Use `basic.json` when generating `cards.txt`
 - Remove `$` and `#` prefixes from damage and restored health
 - Remove leading "[x]" from card texts?
-- Add options for only creating the spoilers or checklists but not both
 - Add an option for using a given file as input instead of fetching the data
   from hearthstonejson.com
+    - Give the "main" command a `-c <cards-file>` (and, later, `-S
+      <strings-file>`) option
 - Get enum strings from
   <https://api.hearthstonejson.com/v1/strings/enUS/GLOBAL.json>
 - Add an option for including card IDs in spoilers?
-
-- Combine the scripts into one command with the following syntax (accepting
-  multiple subcommands at once?):
-
-        hscards [-c <cards-file>] [-S <strings-file>]
-            [spoiler [-o <outfile>]]
-            [checklists [-f <format>] [-d <outdir>] [<set> ...]]
+- Write a README
+- Add `--help` text
+- Add docstrings
+- Let `checklists` take a list of sets to typeset as arguments
 
 - Checklists:
-    - Add an option for setting the output directory/output path
     - Add an option for whether to include checkboxes?
     - Omit the rarity field from the Basic set checklist
     - Include unlock & golden levels in the Basic set checklist?
 
 - `pdflists.py`:
-    - Add an option for setting the output directory
-    - Display the set name somewhere
+    - Display the set name somewhere (as a page header?)
     - Recalculate `CARDS_PER_CLASS` for each set (Note that not all classes
       always have the same number of cards; e.g., Hunters in The Grand
       Tournament)
