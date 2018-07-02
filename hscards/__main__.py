@@ -1,13 +1,25 @@
+import json
 import os
 import os.path
 import click
+import requests
 from   .carddb   import CARDS_URL, CardDB, HSRarity
 from   .pdflists import mkpdfcardlist
 
-@click.group(chain=True)
+def json_source(src):
+    if src.lower().startswith(('http://', 'https://')):
+        r = requests.get(src)
+        r.raise_for_status()
+        return r.json()
+    else:
+        with click.open_file(src) as fp:
+            return json.load(fp)
+
+@click.group('hscards', chain=True)
+@click.option('-c', '--cards-file', type=json_source, default=CARDS_URL)
 @click.pass_context
-def main(ctx):
-    ctx.obj = CardDB.from_url(CARDS_URL)
+def main(ctx, cards_file):
+    ctx.obj = CardDB.from_json(cards_file)
 
 @main.command()
 @click.option('-o', '--outfile', type=click.File('w'), default='cards.txt',

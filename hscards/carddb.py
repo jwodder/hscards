@@ -2,10 +2,8 @@ from   collections import defaultdict
 from   enum        import Enum
 from   functools   import total_ordering
 from   itertools   import groupby
-import json
 from   operator    import attrgetter
 import textwrap
-import requests
 
 CARDS_URL = 'https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json'
 
@@ -243,17 +241,7 @@ class CardDB:
         self.cards = list(cards)
 
     @classmethod
-    def from_url(cls, url):
-        r = requests.get(url)
-        r.raise_for_status()
-        return cls.from_list(r.json())
-
-    @classmethod
-    def from_file(cls, fp):
-        return cls.from_list(json.load(fp))
-
-    @classmethod
-    def from_list(cls, cards: [dict]):
+    def from_json(cls, cards: [dict]):
         hscards = []
         for c in cards:
             if "type" not in c:

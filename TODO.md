@@ -1,17 +1,16 @@
 - Use `basic.json` when generating `cards.txt`
 - Remove `$` and `#` prefixes from damage and restored health
 - Remove leading "[x]" from card texts?
-- Add an option for using a given file as input instead of fetching the data
-  from hearthstonejson.com
-    - Give the "main" command a `-c <cards-file>` (and, later, `-S
-      <strings-file>`) option
 - Get enum strings from
   <https://api.hearthstonejson.com/v1/strings/enUS/GLOBAL.json>
+    - Give the "main" command an `-S <strings-file>` option
 - Add an option for including card IDs in spoilers?
 - Write a README
 - Add `--help` text
 - Add docstrings
 - Let `checklists` take a list of sets to typeset as arguments
+- Make sure the code can handle being given a list of all cards (not just
+  collectibles) as input
 
 - Checklists:
     - Add an option for whether to include checkboxes?
