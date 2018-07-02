@@ -1,4 +1,4 @@
-# Python ~= 3.4
+# Python ~= 3.6
 click     ~= 6.5
 reportlab ~= 3.4
 requests  ~= 2.2
