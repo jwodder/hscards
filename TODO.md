@@ -6,6 +6,14 @@
   from hearthstonejson.com
 - Get enum strings from
   <https://api.hearthstonejson.com/v1/strings/enUS/GLOBAL.json>
+- Add an option for including card IDs in spoilers?
+
+- Combine the scripts into one command with the following syntax (accepting
+  multiple subcommands at once?):
+
+        hscards [-c <cards-file>] [-S <strings-file>]
+            [spoiler [-o <outfile>]]
+            [checklists [-f <format>] [-d <outdir>] [<set> ...]]
 
 - Checklists:
     - Add an option for setting the output directory/output path

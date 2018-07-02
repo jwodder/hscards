@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
-from   math                    import cos, sin, tan, tau
-from   pathlib                 import Path
-from   reportlab.lib           import pagesizes
-from   reportlab.lib.units     import inch
-from   reportlab.pdfgen.canvas import Canvas
-from   hscards                 import CARDS_URL, CardDB, HSRarity
+from math                    import cos, sin, tan, tau
+from pathlib                 import Path
+from reportlab.lib           import pagesizes
+from reportlab.lib.units     import inch
+from reportlab.pdfgen.canvas import Canvas
+from .carddb                 import CARDS_URL, CardDB, HSRarity
 
 FONT_NAME = 'Times-Roman'
 FONT_SIZE = 10
