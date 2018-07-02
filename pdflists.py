@@ -34,7 +34,11 @@ RARITY_COLORS = {
 def main():
     chkdir = Path('build', 'checklists')
     chkdir.mkdir(exist_ok=True)
+    all_cards = CardDB.from_url(CARDS_URL)
+    for hs_set, cards in all_cards.by_set():
+        mkpdfcardlist(cards, str(chkdir / (hs_set.name + '.pdf')))
 
+def mkpdfcardlist(cards, outpath):
     def start_class(cls_name):
         nonlocal alt_side, begun, y
         if begun:
@@ -100,31 +104,29 @@ def main():
         if card.statline:
             c.drawAlignedString(slash_point, y, card.statline, pivotChar='/')
 
-    all_cards = CardDB.from_url(CARDS_URL)
-    for hs_set, cards in all_cards.by_set():
-        c = Canvas(str(chkdir / (hs_set.name + '.pdf')), pagesizes.letter)
-        c.setFont(FONT_NAME, FONT_SIZE)
-        namelen = max(c.stringWidth(card.name) for _,cs in cards for card in cs)
-        typelen = max(c.stringWidth(card.typeline) for _,cs in cards for card in cs)
-        tens = c.stringWidth('88')
-        cost_end = namelen + GUTTER + tens
-        type_start = cost_end + GUTTER
-        slash_point = type_start + typelen + GUTTER + tens
-        block_width = slash_point + c.stringWidth('/') + tens - BUBBLE_START
-        block_shift = block_width + 2 * GUTTER
-        left_margin = (8.5 * inch - block_width - block_shift)/2 - BUBBLE_START
-        c.translate(left_margin, 0)
-        bottom_margin = (11 * inch - 3 * (BLOCK_HEIGHT + LINE_HEIGHT)) / 2
-        top_margin = 11 * inch - bottom_margin
-        y = top_margin
-        begun = False
-        alt_side = False
-        for cls, cs in cards:
-            start_class(str(cls).upper())
-            for card in cs:
-                show_card(card)
-        c.showPage()
-        c.save()
+    c = Canvas(outpath, pagesizes.letter)
+    c.setFont(FONT_NAME, FONT_SIZE)
+    namelen = max(c.stringWidth(card.name) for _,cs in cards for card in cs)
+    typelen = max(c.stringWidth(card.typeline) for _,cs in cards for card in cs)
+    tens = c.stringWidth('88')
+    cost_end = namelen + GUTTER + tens
+    type_start = cost_end + GUTTER
+    slash_point = type_start + typelen + GUTTER + tens
+    block_width = slash_point + c.stringWidth('/') + tens - BUBBLE_START
+    block_shift = block_width + 2 * GUTTER
+    left_margin = (8.5 * inch - block_width - block_shift)/2 - BUBBLE_START
+    c.translate(left_margin, 0)
+    bottom_margin = (11 * inch - 3 * (BLOCK_HEIGHT + LINE_HEIGHT)) / 2
+    top_margin = 11 * inch - bottom_margin
+    y = top_margin
+    begun = False
+    alt_side = False
+    for cls, cs in cards:
+        start_class(str(cls).upper())
+        for card in cs:
+            show_card(card)
+    c.showPage()
+    c.save()
 
 def circle(c, x, y):
     c.saveState()
