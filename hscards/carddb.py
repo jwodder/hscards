@@ -3,6 +3,7 @@ from   enum        import Enum
 from   functools   import total_ordering
 from   itertools   import groupby
 from   operator    import attrgetter
+import re
 import textwrap
 
 CARDS_URL = 'https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json'
@@ -134,12 +135,13 @@ class HSCard:
         #     overload         playRequirements  playerClass  referencedTags
         #     spellDamage      targetingArrowText
         for field in (
-            'armor artist attack cost durability flavor health name text'
-                .split()
+            'armor artist attack cost durability flavor health name'.split()
         ):
             setattr(self, field, data.get(field))
         if "collectionText" in data:
-            self.text = data["collectionText"]
+            self.text = sanitize(data["collectionText"])
+        else:
+            self.text = sanitize(data.get("text"))
         self.collectible = bool(data.get("collectible"))
         self.type = HSType[data["type"]]
         self.set  = HSSet[data["set"]]
@@ -197,7 +199,7 @@ class HSCard:
         elif self.type is HSType.SPELL:
             if (self.text or '').startswith('<b>Secret:</b>'):
                 return 'Secret'
-            elif '<b>Quest:</b>' in (self.text or ''):
+            elif (self.text or '').startswith('<b>Quest:</b>'):
                 return 'Quest'
         return None
 
@@ -290,3 +292,12 @@ def wrap_lines(txt, length=80, postdent=0):
                 break_on_hyphens=False,
             ))
     return lines
+
+def sanitize(txt):
+    # Hopefully, Blizzard never releases a card that says "Summon Murloc #1.
+    # Collect $200."
+    if txt is None:
+        return txt
+    if txt.startswith('[x]'):
+        txt = txt[3:]
+    return re.sub(r'[#$](\d+)', r'\1', txt)
