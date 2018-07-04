@@ -9,7 +9,6 @@
 
 - Spoilers:
     - Include unlock levels from `basic.json`
-    - Add an option for including card IDs in spoilers?
 
 - Checklists:
     - Let `checklists` take a list of sets to typeset as arguments

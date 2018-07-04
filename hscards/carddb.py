@@ -131,11 +131,11 @@ class HSCard:
     def __init__(self, data):
         # Ignored fields:
         #     dbfId            entourage         faction      howToEarn
-        #     howToEarnGolden  id                mechanics    multiClassGroup
+        #     howToEarnGolden  mechanics         multiClassGroup
         #     overload         playRequirements  playerClass  referencedTags
         #     spellDamage      targetingArrowText
         for field in (
-            'armor artist attack cost durability flavor health name'.split()
+            'armor artist attack cost durability flavor health id name'.split()
         ):
             setattr(self, field, data.get(field))
         if "collectionText" in data:
@@ -171,11 +171,14 @@ class HSCard:
         else:
             return self.type in (HSType.MINION, HSType.SPELL, HSType.WEAPON)
 
-    def to_spoiler(self, columns=79, gutter=1):
+    def to_spoiler(self, columns=79, gutter=1, show_id=False):
         s = ''
-        tagwidth = max(len(label) for label, _ in self.SPOILER_FIELDS) + 1
+        spoiler_fields = list(self.SPOILER_FIELDS)
+        if show_id:
+            spoiler_fields.insert(0, ("ID", "id"))
+        tagwidth = max(len(label) for label, _ in spoiler_fields) + 1
         valwidth = columns - tagwidth - gutter
-        for name, attr in self.SPOILER_FIELDS:
+        for name, attr in spoiler_fields:
             value = getattr(self, attr)
             if value is None or value == '':
                 continue

@@ -22,15 +22,20 @@ def main(ctx, cards_file):
     ctx.obj = CardDB.from_json(cards_file)
 
 @main.command()
+@click.option('-I', '--show-ids', is_flag=True)
 @click.option('-o', '--outfile', type=click.File('w'), default='cards.txt',
               show_default=True)
 @click.pass_obj
-def spoiler(carddb, outfile):
+def spoiler(carddb, outfile, show_ids):
     COLUMNS = 79
     GUTTER  = 1
     with outfile:
         for card in carddb.cards_sorted():
-            print(card.to_spoiler(columns=COLUMNS, gutter=GUTTER), file=outfile)
+            print(card.to_spoiler(
+                columns = COLUMNS,
+                gutter  = GUTTER,
+                show_id = show_ids,
+            ), file=outfile)
 
 @main.command()
 @click.option('-d', '--output-dir', type=click.Path(file_okay=False),

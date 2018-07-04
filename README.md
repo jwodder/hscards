@@ -27,7 +27,7 @@ same format to use instead.
 `spoiler` command
 -----------------
 
-    python -m hscards [-c <cards-file>] spoiler [-o <outfile>]
+    python -m hscards [-c <cards-file>] spoiler [-I] [-o <outfile>]
 
 Generate a file of text spoilers for all collectible Hearthstone cards.  The
 spoilers look like this:
@@ -41,6 +41,9 @@ spoilers look like this:
     Set:    Classic (Common)
     Flavor: It traps your food AND cooks it for you!
     Artist: Brandon Kitkouski
+
+If the `-I`/`--show-ids` option is specified, the spoilers will also include
+each card's ID.
 
 By default, the spoilers are written to `cards.txt`; the `-o`/`--outfile`
 option can be used to specify a different file.
