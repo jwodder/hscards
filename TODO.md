@@ -1,7 +1,6 @@
 - Get enum strings from
   <https://api.hearthstonejson.com/v1/strings/enUS/GLOBAL.json>
     - Give the "main" command an `-S <strings-file>` option
-- Write a README
 - Add `--help` text
 - Add docstrings
 - Make sure the code can handle being given a list of all cards (not just
@@ -17,6 +16,8 @@
     - Add an option for whether to include checkboxes?
     - Omit the rarity field from the Basic set checklist
     - Include unlock & golden levels in the Basic set checklist?
+    - Add an option for naming the files after the sets' full names rather than
+      enum names
     - PDF format:
         - Display the set name somewhere (as a page header?)
         - Recalculate `CARDS_PER_CLASS` for each set (Note that not all classes
