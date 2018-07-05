@@ -16,17 +16,20 @@ def json_source(src):
             return json.load(fp)
 
 @click.group('hscards', chain=True)
-@click.option('-c', '--cards-file', type=json_source, default=CARDS_URL)
+@click.option('-c', '--cards-file', type=json_source, default=CARDS_URL,
+              help='Source of card data', show_default=True, metavar='FILE|URL')
 @click.pass_context
 def main(ctx, cards_file):
+    """ Generate Hearthstone card spoilers & checklists """
     ctx.obj = CardDB.from_json(cards_file)
 
 @main.command()
-@click.option('-I', '--show-ids', is_flag=True)
+@click.option('-I', '--show-ids', is_flag=True, help='Include card IDs')
 @click.option('-o', '--outfile', type=click.File('w'), default='cards.txt',
-              show_default=True)
+              show_default=True, help='Name of output file')
 @click.pass_obj
 def spoiler(carddb, outfile, show_ids):
+    """ Generate text spoiler """
     COLUMNS = 79
     GUTTER  = 1
     with outfile:
@@ -39,11 +42,13 @@ def spoiler(carddb, outfile, show_ids):
 
 @main.command()
 @click.option('-d', '--output-dir', type=click.Path(file_okay=False),
-              default='checklists', show_default=True)
+              default='checklists', show_default=True,
+              help='Name of output directory')
 @click.option('-f', '--format', 'chkfmt', type=click.Choice(['txt', 'pdf']),
-              default='txt', show_default=True)
+              default='txt', show_default=True, help='Set checklist format')
 @click.pass_obj
 def checklists(carddb, output_dir, chkfmt):
+    """ Generate card set checklists """
     os.makedirs(output_dir, exist_ok=True)
     for hs_set, cards in carddb.by_set():
         outfile = os.path.join(output_dir, hs_set.name + '.' + chkfmt)

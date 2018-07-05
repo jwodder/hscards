@@ -1,7 +1,6 @@
 - Get enum strings from
   <https://api.hearthstonejson.com/v1/strings/enUS/GLOBAL.json>
     - Give the "main" command an `-S <strings-file>` option
-- Add `--help` text
 - Add docstrings
 - Make sure the code can handle being given a list of all cards (not just
   collectibles) as input
