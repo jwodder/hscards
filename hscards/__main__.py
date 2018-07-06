@@ -76,4 +76,4 @@ def checklists(carddb, output_dir, chkfmt):
             assert False, 'invalid checklist format'
 
 if __name__ == '__main__':
-    main()
+    main(prog_name=__package__)
