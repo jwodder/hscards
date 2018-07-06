@@ -2,11 +2,15 @@ from   collections import defaultdict
 from   enum        import Enum
 from   functools   import total_ordering
 from   itertools   import groupby
+import json
 from   operator    import attrgetter
+from   pathlib     import Path
 import re
 import textwrap
 
 CARDS_URL = 'https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json'
+
+BASIC_JSON = Path(__file__).with_name('basic.json')
 
 class HSType(Enum):
     MINION      = 'Minion'
@@ -135,7 +139,9 @@ class HSCard:
         #     overload         playRequirements  playerClass  referencedTags
         #     spellDamage      targetingArrowText
         for field in (
-            'armor artist attack cost durability flavor health id name'.split()
+            'armor artist attack cost durability flavor health id name'
+            ' gold_class gold_levels unlock_lvl'  # From basic.json
+            .split()
         ):
             setattr(self, field, data.get(field))
         if "collectionText" in data:
@@ -226,8 +232,19 @@ class HSCard:
 
     @property
     def _set(self):
+        attribs = []
         if self.rarity is not None:
-            return '{0.set} ({0.rarity})'.format(self)
+            attribs.append(str(self.rarity))
+        if self.unlock_lvl is not None:
+            attribs.append('Unlock: lvl. {}'.format(self.unlock_lvl))
+        if self.gold_levels is not None:
+            lvls = ', '.join(map(str, self.gold_levels))
+            if self.gold_class is not None:
+                attribs.append('Gold: {} lvls. {}'.format(self.gold_class,lvls))
+            else:
+                attribs.append('Gold: lvls. {}'.format(lvls))
+        if attribs:
+            return '{} ({})'.format(self.set, '; '.join(attribs))
         else:
             return str(self.set)
 
@@ -246,12 +263,17 @@ class CardDB:
         self.cards = list(cards)
 
     @classmethod
-    def from_json(cls, cards: [dict]):
+    def from_json(cls, cards: [dict], basics=None):
+        if basics is None:
+            with open(BASIC_JSON) as fp:
+                basics = json.load(fp)
         hscards = []
         for c in cards:
             if "type" not in c:
                 assert c["id"] == "PlaceholderCard"
                 continue
+            if c.get("name") in basics:
+                c = {**c, **basics[c.get("name")]}
             c = HSCard(c)
             if c.is_card and c.collectible:
                 hscards.append(c)

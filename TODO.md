@@ -6,9 +6,6 @@
   collectibles) as input
 - Add an option for specifying what language to fetch files for
 
-- Spoilers:
-    - Include unlock levels from `basic.json`
-
 - Checklists:
     - Let `checklists` take a list of sets to typeset as arguments
     - Add an option for whether to include checkboxes?
@@ -21,7 +18,6 @@
         - Recalculate `CARDS_PER_CLASS` for each set (Note that not all classes
           always have the same number of cards; e.g., Hunters in The Grand
           Tournament)
-        - Include unlock & golden levels in the Basic set checklist?
         - Fiddle with the bubble-related dimensions
         - Replace the slash with Symbol's \244 (U+2044) ?
         - Replace the circle and star with ZapfDingbats' \155 (U+274D) and \111
