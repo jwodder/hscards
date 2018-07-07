@@ -15,7 +15,7 @@ def json_source(src):
         with click.open_file(src) as fp:
             return json.load(fp)
 
-@click.group('hscards', chain=True)
+@click.group()
 @click.option('-c', '--cards-file', type=json_source, default=CARDS_URL,
               help='Source of card data', show_default=True, metavar='FILE|URL')
 @click.pass_context
@@ -46,34 +46,45 @@ def spoiler(carddb, outfile, show_ids):
               help='Name of output directory')
 @click.option('-f', '--format', 'chkfmt', type=click.Choice(['txt', 'pdf']),
               default='txt', show_default=True, help='Set checklist format')
+@click.argument('cardsets', nargs=-1)
 @click.pass_obj
-def checklists(carddb, output_dir, chkfmt):
+def checklists(carddb, output_dir, chkfmt, cardsets):
     """ Generate card set checklists """
     os.makedirs(output_dir, exist_ok=True)
-    for hs_set, cards in carddb.by_set():
-        outfile = os.path.join(output_dir, hs_set.name + '.' + chkfmt)
-        if chkfmt == 'txt':
-            with open(outfile, 'w') as fp:
-                col_widths = list(map(max, zip(
-                    *(map(len, c.checklist_columns())
-                      for _,cs in cards for c in cs)
-                )))
-                print(str(hs_set), file=fp)
-                for cls, cs in cards:
-                    print(file=fp)
-                    print(str(cls).upper(), file=fp)
-                    for card in cs:
-                        print(
-                            '[ ]    ' if card.rarity is HSRarity.LEGENDARY
-                                      else '[ ] [ ]',
-                            *map(str.ljust,card.checklist_columns(),col_widths),
-                            sep='  ',
-                            file=fp,
-                        )
-        elif chkfmt == 'pdf':
-            mkpdfcardlist(cards, outfile)
-        else:
-            assert False, 'invalid checklist format'
+    mkcardlist = mktxtcardlist if chkfmt == 'txt' else mkpdfcardlist
+    cards_by_set = {
+        hs_set.name: (hs_set, cards) for (hs_set, cards) in carddb.by_set()
+    }
+    if cardsets:
+        for c in cardsets:
+            if c in cards_by_set:
+                hs_set, cards = cards_by_set[c]
+                outfile = os.path.join(output_dir, hs_set.name + '.' + chkfmt)
+                mkcardlist(hs_set, cards, outfile)
+            else:
+                click.echo('{}: unknown set'.format(c), err=True)
+    else:
+        for hs_set, cards in cards_by_set.values():
+            outfile = os.path.join(output_dir, hs_set.name + '.' + chkfmt)
+            mkcardlist(hs_set, cards, outfile)
+
+def mktxtcardlist(hs_set, cards, outfile):
+    with open(outfile, 'w') as fp:
+        col_widths = list(map(max, zip(
+            *(map(len, c.checklist_columns()) for _,cs in cards for c in cs)
+        )))
+        print(str(hs_set), file=fp)
+        for cls, cs in cards:
+            print(file=fp)
+            print(str(cls).upper(), file=fp)
+            for card in cs:
+                print(
+                    '[ ]    ' if card.rarity is HSRarity.LEGENDARY
+                              else '[ ] [ ]',
+                    *map(str.ljust, card.checklist_columns(), col_widths),
+                    sep='  ',
+                    file=fp,
+                )
 
 if __name__ == '__main__':
     main(prog_name=__package__)

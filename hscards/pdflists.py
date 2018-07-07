@@ -29,7 +29,7 @@ RARITY_COLORS = {
     HSRarity.LEGENDARY: (1, 0.5, 0),
 }
 
-def mkpdfcardlist(cards, outpath):
+def mkpdfcardlist(hs_set, cards, outpath):
     def start_class(cls_name):
         nonlocal alt_side, begun, y
         if begun:

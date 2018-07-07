@@ -7,7 +7,6 @@
 - Add an option for specifying what language to fetch files for
 
 - Checklists:
-    - Let `checklists` take a list of sets to typeset as arguments
     - Add an option for whether to include checkboxes?
     - Omit the rarity field from the Basic set checklist
     - Include unlock & golden levels in the Basic set checklist?
