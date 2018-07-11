@@ -27,7 +27,7 @@ same format to use instead.
 `spoiler` command
 -----------------
 
-    python -m hscards [-c <cards-file>] spoiler [-I] [-o <outfile>]
+    python3 -m hscards [-c <cards-file>] spoiler [-I] [-o <outfile>]
 
 Generate a file of text spoilers for all collectible Hearthstone cards.  The
 spoilers look like this:
@@ -51,12 +51,13 @@ option can be used to specify a different file.
 `checklists` command
 --------------------
 
-    python -m hscards [-c <cards-file>] checklists [-d <output-dir>] [-f <txt|pdf>] [<set> ...]
+    python3 -m hscards [-c <cards-file>] checklists [-d <output-dir>] [-f <txt|pdf>] [--full-names] [<set> ...]
 
 Generate checklists for each collectible Hearthstone card set (either all sets
 or just those listed on the command line), one file per set.  Files are created
 in the directory specified with the `-d`/`--output-dir` option (default:
-`checklists`) and are named with each set's internal codename (e.g., the Basic
-set is `CORE.txt` and the Classic set is `EXPERT1.txt`).  The checklist file
-format can be set with the `-f`/`--format` option: either `txt` (the default)
-or `pdf`.
+`checklists`) and are named either with each set's internal codename (e.g., the
+Basic set is `CORE.txt` and the Classic set is `EXPERT1.txt`) or, if the
+`--full-names` option is given, with each set's full display name (e.g.,
+`Basic.txt` and `Classic.txt`).  The checklist file format can be set with the
+`-f`/`--format` option: either `txt` (the default) or `pdf`.

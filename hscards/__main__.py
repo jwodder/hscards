@@ -46,9 +46,11 @@ def spoiler(carddb, outfile, show_ids):
               help='Name of output directory')
 @click.option('-f', '--format', 'chkfmt', type=click.Choice(['txt', 'pdf']),
               default='txt', show_default=True, help='Set checklist format')
+@click.option('--full-names', is_flag=True,
+              help="Name files with sets' full names instead of enum names")
 @click.argument('cardsets', nargs=-1)
 @click.pass_obj
-def checklists(carddb, output_dir, chkfmt, cardsets):
+def checklists(carddb, output_dir, chkfmt, cardsets, full_names):
     """ Generate card set checklists """
     os.makedirs(output_dir, exist_ok=True)
     mkcardlist = mktxtcardlist if chkfmt == 'txt' else mkpdfcardlist
@@ -59,13 +61,16 @@ def checklists(carddb, output_dir, chkfmt, cardsets):
         for c in cardsets:
             if c in cards_by_set:
                 hs_set, cards = cards_by_set[c]
-                outfile = os.path.join(output_dir, hs_set.name + '.' + chkfmt)
+                name = hs_set.value.replace('/', '_') if full_names \
+                        else hs_set.name
+                outfile = os.path.join(output_dir, name + '.' + chkfmt)
                 mkcardlist(hs_set, cards, outfile)
             else:
                 click.echo('{}: unknown set'.format(c), err=True)
     else:
         for hs_set, cards in cards_by_set.values():
-            outfile = os.path.join(output_dir, hs_set.name + '.' + chkfmt)
+            name = hs_set.value.replace('/', '_') if full_names else hs_set.name
+            outfile = os.path.join(output_dir, name + '.' + chkfmt)
             mkcardlist(hs_set, cards, outfile)
 
 def mktxtcardlist(hs_set, cards, outfile):
