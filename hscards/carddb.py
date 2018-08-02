@@ -42,6 +42,7 @@ class HSSet(Enum):
     ICECROWN = "Knights of the Frozen Throne"
     LOOTAPALOOZA = "Kobolds & Catacombs"
     GILNEAS  = "The Witchwood"
+    BOOMSDAY = "The Boomsday Project"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
