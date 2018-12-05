@@ -43,6 +43,7 @@ class HSSet(Enum):
     LOOTAPALOOZA = "Kobolds & Catacombs"
     GILNEAS  = "The Witchwood"
     BOOMSDAY = "The Boomsday Project"
+    TROLL    = "Rastakhan's Rumble"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
