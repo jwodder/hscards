@@ -44,6 +44,7 @@ class HSSet(Enum):
     GILNEAS  = "The Witchwood"
     BOOMSDAY = "The Boomsday Project"
     TROLL    = "Rastakhan's Rumble"
+    DALARAN  = "Rise of Shadows"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
