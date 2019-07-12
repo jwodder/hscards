@@ -295,7 +295,7 @@
         "gold_levels": [28, 30],
         "unlock_lvl": 1
     },
-    "Mind Blast": {
+    "Radiance": {
         "gold_levels": [15, 20],
         "unlock_lvl": 1
     },
@@ -459,7 +459,7 @@
         "gold_class": "Paladin",
         "gold_levels": [55, 56]
     },
-    "Succubus": {
+    "Felstalker": {
         "gold_levels": [40, 42],
         "unlock_lvl": 1
     },
@@ -487,7 +487,7 @@
         "gold_levels": [43, 44],
         "unlock_lvl": 8
     },
-    "Vanish": {
+    "Plaguebringer": {
         "gold_levels": [23, 26],
         "unlock_lvl": 8
     },
