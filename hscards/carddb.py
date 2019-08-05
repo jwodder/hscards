@@ -45,6 +45,7 @@ class HSSet(Enum):
     BOOMSDAY = "The Boomsday Project"
     TROLL    = "Rastakhan's Rumble"
     DALARAN  = "Rise of Shadows"
+    ULDUM    = "Saviors of Uldum"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
