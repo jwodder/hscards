@@ -46,6 +46,7 @@ class HSSet(Enum):
     TROLL    = "Rastakhan's Rumble"
     DALARAN  = "Rise of Shadows"
     ULDUM    = "Saviors of Uldum"
+    DRAGONS  = "Descent of Dragons"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
@@ -214,6 +215,8 @@ class HSCard:
                 return 'Secret'
             elif (self.text or '').startswith('<b>Quest:</b>'):
                 return 'Quest'
+            elif (self.text or '').startswith('<b>Sidequest:</b>'):
+                return 'Sidequest'
         return None
 
     @property
