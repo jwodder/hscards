@@ -149,7 +149,8 @@ class HSCard:
             .split()
         ):
             setattr(self, field, data.get(field))
-        if "collectionText" in data:
+        if "collectionText" in data and \
+                not data["name"].startswith('Galakrond,'):
             self.text = sanitize(data["collectionText"])
         else:
             self.text = sanitize(data.get("text"))
