@@ -47,6 +47,7 @@ class HSSet(Enum):
     DALARAN  = "Rise of Shadows"
     ULDUM    = "Saviors of Uldum"
     DRAGONS  = "Descent of Dragons"
+    YEAR_OF_THE_DRAGON = "Galakrond's Awakening"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
