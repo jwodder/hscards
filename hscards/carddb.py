@@ -48,6 +48,8 @@ class HSSet(Enum):
     ULDUM    = "Saviors of Uldum"
     DRAGONS  = "Descent of Dragons"
     YEAR_OF_THE_DRAGON = "Galakrond's Awakening"
+    DEMON_HUNTER_INITIATE = "Demon Hunter Initiate"
+    BLACK_TEMPLE = "Ashes of Outland"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
@@ -102,18 +104,19 @@ class HSRarity(Enum):
 
 @total_ordering
 class HSClass(Enum):
-    DRUID       = ('Druid', 0)
-    HUNTER      = ('Hunter', 1)
-    MAGE        = ('Mage', 2)
-    PALADIN     = ('Paladin', 3)
-    PRIEST      = ('Priest', 4)
-    ROGUE       = ('Rogue', 5)
-    SHAMAN      = ('Shaman', 6)
-    WARLOCK     = ('Warlock', 7)
-    WARRIOR     = ('Warrior', 8)
-    NEUTRAL     = ('Neutral', 9)
-    DREAM       = ('Emerald Dream', 10)
-    DEATHKNIGHT = ('Death Knight', 11)
+    DEMONHUNTER = ('Demon Hunter', 0)
+    DRUID       = ('Druid', 1)
+    HUNTER      = ('Hunter', 2)
+    MAGE        = ('Mage', 3)
+    PALADIN     = ('Paladin', 4)
+    PRIEST      = ('Priest', 5)
+    ROGUE       = ('Rogue', 6)
+    SHAMAN      = ('Shaman', 7)
+    WARLOCK     = ('Warlock', 8)
+    WARRIOR     = ('Warrior', 9)
+    NEUTRAL     = ('Neutral', 10)
+    DREAM       = ('Emerald Dream', 11)
+    DEATHKNIGHT = ('Death Knight', 12)
 
     def __str__(self):
         return self.value[0]
