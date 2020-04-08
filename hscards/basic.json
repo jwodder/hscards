@@ -115,10 +115,6 @@
         "gold_levels": [43, 44],
         "unlock_lvl": 1
     },
-    "Divine Spirit": {
-        "gold_levels": [28, 30],
-        "unlock_lvl": 2
-    },
     "Dragonling Mechanic": {
         "gold_class": "Mage",
         "gold_levels": [53, 54]
@@ -335,10 +331,6 @@
         "gold_class": "Druid",
         "gold_levels": [53, 54]
     },
-    "Northshire Cleric": {
-        "gold_levels": [40, 42],
-        "unlock_lvl": 1
-    },
     "Novice Engineer": {
         "gold_class": "Druid",
         "gold_levels": [59, 60]
@@ -355,8 +347,16 @@
         "gold_levels": [47, 48],
         "unlock_lvl": 1
     },
+    "Power Infusion": {
+        "gold_levels": [28, 30],
+        "unlock_lvl": 2
+    },
     "Power Word: Shield": {
         "gold_levels": [47, 48],
+        "unlock_lvl": 1
+    },
+    "Psychic Conjurer": {
+        "gold_levels": [40, 42],
         "unlock_lvl": 1
     },
     "Raid Leader": {
