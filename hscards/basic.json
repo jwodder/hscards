@@ -3,6 +3,10 @@
         "gold_class": "Rogue",
         "gold_levels": [57, 58]
     },
+    "Aldrachi Warblades": {
+        "gold_levels": [26, 28],
+        "unlock_lvl": 1
+    },
     "Ancestral Healing": {
         "gold_levels": [15, 20],
         "unlock_lvl": 1
@@ -75,6 +79,14 @@
         "gold_class": "Warlock",
         "gold_levels": [51, 52]
     },
+    "Chaos Nova": {
+        "gold_levels": [50, 52],
+        "unlock_lvl": 1
+    },
+    "Chaos Strike": {
+        "gold_levels": [34, 36],
+        "unlock_lvl": 1
+    },
     "Charge": {
         "gold_levels": [23, 26],
         "unlock_lvl": 1
@@ -94,6 +106,10 @@
     "Consecration": {
         "gold_levels": [43, 44],
         "unlock_lvl": 4
+    },
+    "Coordinated Strike": {
+        "gold_levels": [22, 24],
+        "unlock_lvl": 1
     },
     "Core Hound": {
         "gold_class": "Hunter",
@@ -179,6 +195,10 @@
         "gold_class": "Shaman",
         "gold_levels": [53, 54]
     },
+    "Glaivebound Adept": {
+        "gold_levels": [38, 40],
+        "unlock_lvl": 1
+    },
     "Gnomish Inventor": {
         "gold_class": "Priest",
         "gold_levels": [57, 58]
@@ -246,6 +266,10 @@
     "Hunter's Mark": {
         "gold_levels": [40, 42],
         "unlock_lvl": 6
+    },
+    "Inner Demon": {
+        "gold_levels": [58, 60],
+        "unlock_lvl": 1
     },
     "Innervate": {
         "gold_levels": [36, 38],
@@ -387,6 +411,10 @@
         "gold_levels": [40, 42],
         "unlock_lvl": 1
     },
+    "Satyr Overseer": {
+        "gold_levels": [54, 56],
+        "unlock_lvl": 1
+    },
     "Savage Roar": {
         "gold_levels": [43, 44],
         "unlock_lvl": 4
@@ -407,6 +435,10 @@
         "gold_levels": [36, 38],
         "unlock_lvl": 1
     },
+    "Shadowhood Slayer": {
+        "gold_levels": [30, 32],
+        "unlock_lvl": 1
+    },
     "Shattered Sun Cleric": {
         "gold_class": "Priest",
         "gold_levels": [53, 54]
@@ -419,12 +451,20 @@
         "gold_levels": [45, 46],
         "unlock_lvl": 6
     },
+    "Sightless Watcher": {
+        "gold_levels": [42, 44],
+        "unlock_lvl": 1
+    },
     "Silverback Patriarch": {
         "gold_class": "Warrior",
         "gold_levels": [53, 54]
     },
     "Sinister Strike": {
         "gold_levels": [15, 20],
+        "unlock_lvl": 1
+    },
+    "Soul Cleave": {
+        "gold_levels": [46, 48],
         "unlock_lvl": 1
     },
     "Soulfire": {
