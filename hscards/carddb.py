@@ -50,6 +50,7 @@ class HSSet(Enum):
     YEAR_OF_THE_DRAGON = "Galakrond's Awakening"
     DEMON_HUNTER_INITIATE = "Demon Hunter Initiate"
     BLACK_TEMPLE = "Ashes of Outland"
+    SCHOLOMANCE = "Scholomance Academy"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
@@ -168,7 +169,6 @@ class HSCard:
             self.rarity = HSRarity[data["rarity"]]
         self.card_class = HSClass[data["cardClass"]] if "cardClass" in data else None
         if "classes" in data:
-            assert self.card_class is HSClass.NEUTRAL
             self.multi_classes = [HSClass[c] for c in data["classes"]]
         else:
             self.multi_classes = None
