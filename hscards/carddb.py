@@ -51,6 +51,7 @@ class HSSet(Enum):
     DEMON_HUNTER_INITIATE = "Demon Hunter Initiate"
     BLACK_TEMPLE = "Ashes of Outland"
     SCHOLOMANCE = "Scholomance Academy"
+    DARKMOON_FAIRE = "Madness at the Darkmoon Faire"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
