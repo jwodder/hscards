@@ -25,8 +25,10 @@ class HSType(Enum):
 
 
 class HSSet(Enum):
-    CORE     = "Basic"
-    EXPERT1  = "Classic"
+    CORE     = "Core"
+    VANILLA  = "Classic"
+    EXPERT1  = "Classic Set"
+    LEGACY   = "Legacy"
     REWARD   = "Reward"
     PROMO    = "Promotion"
     HOF      = "Hall of Fame"
@@ -52,6 +54,7 @@ class HSSet(Enum):
     BLACK_TEMPLE = "Ashes of Outland"
     SCHOLOMANCE = "Scholomance Academy"
     DARKMOON_FAIRE = "Madness at the Darkmoon Faire"
+    THE_BARRENS = "Forged in the Barrens"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
@@ -88,6 +91,19 @@ class HSRace(Enum):
     ORC        = "Orc"
     PIRATE     = "Pirate"
     TOTEM      = "Totem"
+
+    def __str__(self):
+        return self.value
+
+
+class HSSchool(Enum):
+    ARCANE = "Arcane"
+    FIRE   = "Fire"
+    FROST  = "Frost"
+    NATURE = "Nature"
+    HOLY   = "Holy"
+    SHADOW = "Shadow"
+    FEL    = "Fel"
 
     def __str__(self):
         return self.value
@@ -164,6 +180,7 @@ class HSCard:
         self.type = HSType[data["type"]]
         self.set  = HSSet[data["set"]]
         self.race = HSRace[data["race"]] if "race" in data else None
+        self.school = HSSchool[data["spellSchool"]] if "spellSchool" in data else None
         if self.set == HSSet.CORE or "rarity" not in data:
             self.rarity = None
         else:
@@ -206,9 +223,13 @@ class HSCard:
 
     @property
     def typeline(self):
-        sub = self.subtype
-        if sub is not None:
-            return '{} — {}'.format(self.type, sub)
+        subtypes = []
+        if self.subtype is not None:
+            subtypes.append(self.subtype)
+        if self.school is not None:
+            subtypes.append(self.school)
+        if subtypes:
+            return '{} — {}'.format(self.type, ", ".join(map(str, subtypes)))
         else:
             return str(self.type)
 
