@@ -90,6 +90,7 @@ class HSRace(Enum):
     MURLOC     = "Murloc"
     ORC        = "Orc"
     PIRATE     = "Pirate"
+    QUILBOAR   = "Quilboar"
     TOTEM      = "Totem"
 
     def __str__(self):
