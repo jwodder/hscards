@@ -6,22 +6,20 @@ import requests
 from   .carddb   import CARDS_URL, CardDB, HSRarity
 from   .pdflists import mkpdfcardlist
 
-def json_source(src):
-    if src.lower().startswith(('http://', 'https://')):
-        r = requests.get(src)
-        r.raise_for_status()
-        return r.json()
-    else:
-        with click.open_file(src) as fp:
-            return json.load(fp)
-
 @click.group()
-@click.option('-c', '--cards-file', type=json_source, default=CARDS_URL,
+@click.option('-c', '--cards-file', default=CARDS_URL,
               help='Source of card data', show_default=True, metavar='FILE|URL')
 @click.pass_context
 def main(ctx, cards_file):
     """ Generate Hearthstone card spoilers & checklists """
-    ctx.obj = CardDB.from_json(cards_file)
+    if cards_file.lower().startswith(('http://', 'https://')):
+        r = requests.get(cards_file)
+        r.raise_for_status()
+        data = r.json()
+    else:
+        with click.open_file(cards_file) as fp:
+            data = json.load(fp)
+    ctx.obj = CardDB.from_json(data)
 
 @main.command()
 @click.option('-I', '--show-ids', is_flag=True, help='Include card IDs')
