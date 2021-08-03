@@ -55,6 +55,7 @@ class HSSet(Enum):
     SCHOLOMANCE = "Scholomance Academy"
     DARKMOON_FAIRE = "Madness at the Darkmoon Faire"
     THE_BARRENS = "Forged in the Barrens"
+    STORMWIND = "United in Stormwind"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
@@ -244,6 +245,8 @@ class HSCard:
             elif (self.text or '').startswith('<b>Quest:</b>'):
                 return 'Quest'
             elif (self.text or '').startswith('<b>Sidequest:</b>'):
+                return 'Sidequest'
+            elif (self.text or '').startswith('<b>Questline:</b>'):
                 return 'Sidequest'
         return None
 
