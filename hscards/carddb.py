@@ -56,6 +56,7 @@ class HSSet(Enum):
     DARKMOON_FAIRE = "Madness at the Darkmoon Faire"
     THE_BARRENS = "Forged in the Barrens"
     STORMWIND = "United in Stormwind"
+    ALTERAC_VALLEY = "Fractured in Alterac Valley"
 
     BLANK          = "BLANK"
     CHEAT          = "CHEAT"
